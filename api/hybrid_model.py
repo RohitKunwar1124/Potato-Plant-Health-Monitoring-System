@@ -2,9 +2,30 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 from io import BytesIO
+import os
+from gdown.download import download
 
 from tensorflow.keras.applications.efficientnet import preprocess_input  # pyright: ignore[reportMissingImports]
 
+# DOWNLOAD MODELS IF NOT EXISTS
+# ==============================
+
+if not os.path.exists("potato_resnet50.keras"):
+    print("Downloading ResNet model...")
+    download(
+        "https://drive.google.com/uc?id=17K8h1rgRWKWKa4GjSijPicJLx_Js1ye0",
+        quiet=False
+    )
+
+if not os.path.exists("potato_efficientnet.keras"):
+    print("Downloading EfficientNet model...")
+    download(
+        "https://drive.google.com/uc?id=1jLnCZ7mALU8IM27UFkP35wa_K4_KaToF",
+        "potato_efficientnet.keras",
+        quiet=False
+    )
+
+    
 # LOAD MODELS
 resnet_model = tf.keras.models.load_model("potato_resnet50.keras") 
 efficient_model = tf.keras.models.load_model("potato_efficientnet.keras") 
