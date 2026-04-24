@@ -35,12 +35,12 @@ async def predict_api(file: UploadFile = File(...)):
 
     image = read_file_as_image(await file.read())
 
-    predicted_class, confidence = predict(image)
-
+    predicted_class, confidence, confidence_level = predict(image)
     advice = ADVICE_BY_CLASS.get(predicted_class, {})
 
     return {
         "class": predicted_class,
         "confidence": confidence,
+        "confidence_level": confidence_level,
         "advice": advice
     }

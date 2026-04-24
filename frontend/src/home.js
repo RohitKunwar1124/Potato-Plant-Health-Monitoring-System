@@ -497,7 +497,7 @@ export const ImageUpload = () => {
   const [preview, setPreview] = useState();
   const [data, setData] = useState();
   const [image, setImage] = useState(false);
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [infoPanelOpen, setInfoPanelOpen] = useState(false);
   const [infoIconClicked, setInfoIconClicked] = useState(false);
   const [soundIconClicked, setSoundIconClicked] = useState(false);
@@ -505,21 +505,31 @@ export const ImageUpload = () => {
   const advicePanelRef = useRef(null);
   let confidence = 0;
 
-  const sendFile = useCallback(async () => {
-    if (image) {
-      let formData = new FormData();
-      formData.append("file", selectedFile);
-      let res = await axios({
-        method: "post",
-        url: process.env.REACT_APP_API_URL,
-        data: formData,
-      });
-      if (res.status === 200) {
-        setData(res.data);
-      }
-      setIsloading(false);
+ const sendFile = useCallback(async () => {
+  if (!selectedFile) return;
+
+  setIsLoading(true);
+
+  try {
+    let formData = new FormData();
+    formData.append("file", selectedFile);
+
+    let res = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}/predict`,
+      data: formData,
+    });
+
+    if (res.status === 200) {
+      setData(res.data);
     }
-  }, [image, selectedFile]);
+  } catch (err) {
+    alert("Server error or slow response. Try again.");
+    console.error(err);
+  } finally {
+    setIsLoading(false);
+  }
+}, [selectedFile]);
 
   const clearData = () => {
     setData(null);
@@ -620,7 +630,7 @@ export const ImageUpload = () => {
     if (!preview) {
       return;
     }
-    setIsloading(true);
+    setIsLoading(true);
     sendFile();
   }, [preview, sendFile]);
 
@@ -639,6 +649,12 @@ export const ImageUpload = () => {
   if (data) {
     confidence = (parseFloat(data.confidence) * 100).toFixed(2);
   }
+
+  const getConfidenceColor = (level) => {
+    if (level === "High") return "green";
+    if (level === "Medium") return "orange";
+    return "red";
+  };
 
   return (
     <React.Fragment>
@@ -712,7 +728,7 @@ export const ImageUpload = () => {
                       className={classes.loader}
                     />
                     <Typography className={classes.title} variant="h6" noWrap>
-                      Processing
+                      Analyzing leaf... please wait
                     </Typography>
                   </CardContent>
                 )}
@@ -822,8 +838,16 @@ export const ImageUpload = () => {
                             <span className={classes.resultLabel}>
                               Confidence:
                             </span>
-                            <span className={classes.resultConfidence}>
-                              {confidence}%
+                            <span
+                              className={classes.resultConfidence}
+                              style={{
+                                color: getConfidenceColor(
+                                  data?.confidence_level,
+                                ),
+                              }}
+                            >
+                              {data?.confidence_level} ({confidence}%
+                              confidence)
                             </span>
                           </div>
                         </div>
@@ -860,7 +884,8 @@ export const ImageUpload = () => {
                                 Confidence:
                               </Typography>
                               <p className={classes.advicePanelText}>
-                                {confidence}%
+                                {data?.confidence_level} ({confidence}%
+                                confidence)
                               </p>
                             </div>
                             {hasAdvice && (
