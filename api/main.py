@@ -1,9 +1,9 @@
 from fastapi import FastAPI, File, UploadFile
-import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-from hybrid_model import read_file_as_image, hybrid_predict
+from model import read_file_as_image, predict
 import json
 import os
+
 app = FastAPI()
 
 origins = [
@@ -19,25 +19,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(BASE_DIR, "advice.json"), "r", encoding="utf-8") as f:
     ADVICE_BY_CLASS = json.load(f)
 
 
-
 @app.get("/ping")
 async def ping():
     return "Hello, I am alive"
 
+
 @app.post("/predict")
-async def predict(file: UploadFile = File(...)):
+async def predict_api(file: UploadFile = File(...)):
 
     image = read_file_as_image(await file.read())
 
-    predicted_class, confidence = hybrid_predict(image)
+    predicted_class, confidence = predict(image)
 
     advice = ADVICE_BY_CLASS.get(predicted_class, {})
 
