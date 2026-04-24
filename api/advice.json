@@ -1,0 +1,117 @@
+{
+  "Healthy": {
+    "disease_description": "The plant is healthy and shows no signs of disease or infection. Leaves are functioning normally and photosynthesis is not affected. A healthy potato plant typically has strong green foliage, proper growth, and resistance to common pathogens when maintained under good conditions.",
+    "symptoms": [
+      "Uniform green color across leaves",
+      "No visible spots, lesions, or discoloration",
+      "Leaves appear firm, fresh, and well-shaped"
+    ],
+    "current_status": "Plant looks healthy. No visible disease symptoms.",
+    "what_to_do": [
+      "Continue regular watering",
+      "Keep proper spacing between plants for airflow",
+      "Monitor leaves every few days for spots or yellowing"
+    ],
+    "approximate_quantity": [
+      "No fungicide needed now",
+      "Use only preventive organic spray like neem oil 3–5 ml per liter of water"
+    ],
+    "precautions": [
+      "Avoid overwatering",
+      "Remove any fallen or dead leaves from soil",
+      "Use clean tools when pruning"
+    ],
+    "video": {
+      "english": "https://www.youtube.com/watch?v=JQzikPunbmk",
+      "hindi": "https://www.youtube.com/watch?v=3kV8xF1Y9g0"
+    },
+    "products": [
+      {
+        "name": "Neem Oil Spray",
+        "search_link": "https://www.amazon.in/s?k=neem+oil+plant+spray"
+      }
+    ]
+  },
+
+  "Early Blight": {
+    "disease_description": "Early blight is a common fungal disease caused by Alternaria solani. It usually starts on older leaves and spreads gradually, especially in warm and humid conditions. If not treated early, it can reduce plant vigor and yield by damaging leaf tissue and reducing photosynthesis over time.",
+    "symptoms": [
+      "Brown spots with concentric rings (target-like pattern)",
+      "Yellowing around the infected areas",
+      "Older leaves affected first",
+      "Leaves may dry, curl, and fall off"
+    ],
+    "current_status": "Fungal infection has started. Brown spots with rings may spread if untreated.",
+    "what_to_do": [
+      "Remove heavily infected leaves",
+      "Start fungicide spray as soon as possible",
+      "Repeat spray every 7–10 days if symptoms continue"
+    ],
+    "approximate_quantity": [
+      "Option 1: Mancozeb — Around 2 to 2.5 grams per liter of water",
+      "Option 2: Copper based fungicide — Around 2 grams per liter of water",
+      "Spray until leaves are evenly wet, not dripping."
+    ],
+    "precautions": [
+      "Spray in early morning or late evening",
+      "Do not spray before rain",
+      "Wear gloves and mask while spraying",
+      "Stop spraying a few days before harvesting"
+    ],
+    "video": {
+      "english": "https://www.youtube.com/watch?v=UKf5eCNBvBw",
+      "hindi": "https://www.youtube.com/watch?v=9BtOkjC7ZZ8"
+    },
+    "products": [
+      {
+        "name": "Mancozeb Fungicide",
+        "search_link": "https://www.amazon.in/s?k=mancozeb+fungicide"
+      },
+      {
+        "name": "Copper Fungicide",
+        "search_link": "https://www.amazon.in/s?k=copper+fungicide+plants"
+      }
+    ]
+  },
+
+  "Late Blight": {
+    "disease_description": "Late blight is a highly destructive disease caused by Phytophthora infestans. It spreads very rapidly under cool and humid conditions and can destroy entire crops in a short time. Unlike early blight, it affects both leaves and stems aggressively and requires immediate action to control.",
+    "symptoms": [
+      "Dark, water-soaked patches on leaves",
+      "Rapid spreading of brown or black lesions",
+      "White fungal growth on underside in humid weather",
+      "Leaves collapse and rot quickly"
+    ],
+    "current_status": "Serious and fast spreading disease. Leaves may show dark, wet looking patches.",
+    "what_to_do": [
+      "Remove and destroy badly infected plants or leaves",
+      "Start strong fungicide treatment immediately",
+      "Spray again after 5–7 days if weather is cool and humid"
+    ],
+    "approximate_quantity": [
+      "Option 1: Metalaxyl + Mancozeb mix — About 2 to 2.5 grams per liter of water",
+      "Option 2: Cymoxanil based fungicide — Around 3 grams per liter of water",
+      "Ensure full coverage on both sides of leaves."
+    ],
+    "precautions": [
+      "Do not mix different fungicides unless label says safe",
+      "Clean the sprayer after use",
+      "Keep children and animals away from treated area",
+      "Avoid working in the field until spray has dried"
+    ],
+    "video": {
+      "english": "https://www.youtube.com/watch?v=Sl9vazp2hDE",
+      "hindi": "https://www.youtube.com/watch?v=K9nM7m9l8jU"
+    },
+    "products": [
+      {
+        "name": "Metalaxyl + Mancozeb Fungicide",
+        "search_link": "https://www.amazon.in/s?k=metalaxyl+mancozeb+fungicide"
+      },
+      {
+        "name": "Cymoxanil Fungicide",
+        "search_link": "https://www.amazon.in/s?k=cymoxanil+fungicide"
+      }
+    ]
+  }
+}

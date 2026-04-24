@@ -1,0 +1,76 @@
+# ==============================
+# PYTHON (Backend)
+# ==============================
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# ==============================
+# NODE (Frontend)
+# ==============================
+node_modules/
+build/
+dist/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==============================
+# ENV FILES
+# ==============================
+.env
+.env.local
+.env.*.local
+
+# ==============================
+# OS FILES
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# IDE FILES
+# ==============================
+.vscode/
+.idea/
+
+# ==============================
+# TEMP FILES
+# ==============================
+*.log
+*.tmp
+
+# ==============================
+# DATA / LARGE FILES (IMPORTANT)
+# ==============================
+training/
+anaconda_projects/
+images/
+
+# models (VERY IMPORTANT for GitHub limit)
+*.keras
+
+# ==============================
+# NOTEBOOKS
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# DOCUMENTS
+# ==============================
+*.pptx
+*.pdf
+
+# ==============================
+# OPTIONAL (safety)
+# ==============================
+*.zip
+*.tar.gz
+*.exe
