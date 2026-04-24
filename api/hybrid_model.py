@@ -8,7 +8,6 @@ from gdown.download import download
 from tensorflow.keras.applications.efficientnet import preprocess_input  # pyright: ignore[reportMissingImports]
 
 # DOWNLOAD MODELS IF NOT EXISTS
-# ==============================
 
 if not os.path.exists("potato_resnet50.keras"):
     print("Downloading ResNet model...")
